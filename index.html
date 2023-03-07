@@ -22,25 +22,40 @@
           <input
             type="submit"
             value="search"
-            class="btn btn-primary w-49 m-4"
+            class="btn btn-primary w-48 m-4"
           />
         </form>
 
         <h1 class="city">London</h1>
         <div class="row">
-          <div class="col-2">
+          <div class="col-7">
             <ul>
-              <li id="date-time">Tuesday 11:00</li>
+              <li class="date" id="date-time">Tuesday 11:00</li>
               <li class="description" id="description-weather">Windy</li>
             </ul>
-            <img src="#" id="icon-weather" />
+            <img
+              src="https://openweathermap.org/img/wn/10d@2x.png"
+              id="icon-weather"
+            />
             <strong>
               <span class="number" id="temperature-app"> 17</span>
             </strong>
             <span class="celsius" id="weather-celsius">°C</span>
+
+            <div class="col-5">
+              <ul>
+                <li class="humidity" id="humidity-weather">Humidity:</li>
+                <li class="wind" id="wind-weather">Wind:</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <small> <a href="#">Open-source code</a> by Yetunde Ajayi</small>
+        <small class="link">
+          <a href="https://github.com/olayemiajayi/Vanilla-Java-weather-app"
+            >Open-source code</a
+          >
+          by Yetunde Ajayi</small
+        >
       </div>
     </div>
     <script src="src/index.js"></script>
