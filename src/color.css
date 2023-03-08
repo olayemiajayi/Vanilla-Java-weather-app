@@ -56,3 +56,14 @@ ul {
   position: relative;
   bottom: -50px;
 }
+.numberTemperature {
+  font-size: 12px;
+  text-align: center;
+}
+.days {
+  text-align: center;
+  font-size: 15px;
+}
+.weather-temperature-min {
+  opacity: 0.4;
+}
