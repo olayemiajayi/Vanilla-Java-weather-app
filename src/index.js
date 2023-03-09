@@ -19,34 +19,50 @@ console.log(date.getHours());
 city.innerHTML = `${day}, ${hour}:${minute}`;
 
 //search engine and current weather
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let day = date.getDay();
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let cast = response.data.daily;
   let forecast = document.querySelector("#forecastWeather");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thur", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  cast.forEach(function (castDay, index) {
+    if (index < 4) {
+      forecastHTML =
+        forecastHTML +
+        `
   <div class="col-3">
-    <div class="weather-date">${day}</div>
+    <div class="weather-date">${formatDay(castDay.time)}</div>
     <img
-      src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png"
+      src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+        castDay.condition.icon
+      }.png"
       alt=""
       width="42"
     />
     <div class="numberTemperature">
-      <span class="weather-temperature-max"> 18°</span>
-      <span class="weather-temperature-min"> 12°</span>
+      <span class="weather-temperature-max">${Math.round(
+        castDay.temperature.maximum
+      )}°</span>
+      <span class="weather-temperature-min">${Math.round(
+        castDay.temperature.minimum
+      )}°</span>
     </div>
   </div>
 
 `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
 }
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "308ee4b586fftbc5ce47ob29fd3f7a87";

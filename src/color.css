@@ -1,8 +1,8 @@
 body {
-  background-color: #c3bef0;
-  color: #005792;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #b2e4d5;
+  color: #4f1c4c;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 .city {
   font-size: 50px;
@@ -47,9 +47,9 @@ ul {
 }
 .weather-app {
   display: block;
-  max-width: 455px;
-  margin: 2px auto;
-  padding: 20px;
+  max-width: 458px;
+  margin: 18px auto;
+  padding: 10px;
   border: 5px solid #45171d;
   border-radius: 10px;
 }
@@ -58,7 +58,7 @@ ul {
   bottom: -50px;
 }
 .numberTemperature {
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
 }
 .weather-date {
@@ -67,7 +67,6 @@ ul {
 }
 .weather-temperature-min {
   opacity: 0.4;
-  position: relative;
 }
 .weather-forecast {
   display: inline-flex;
@@ -75,5 +74,5 @@ ul {
   margin: 2px auto;
   width: 480px;
   position: relative;
-  left: 50px;
+  left: 55px;
 }
