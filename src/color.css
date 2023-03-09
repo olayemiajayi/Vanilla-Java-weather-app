@@ -46,7 +46,7 @@ ul {
   padding: 0;
 }
 .weather-app {
-  max-width: 580px;
+  max-width: 540px;
   margin: 20px auto;
   padding: 20px;
   border: 5px solid #45171d;
@@ -57,13 +57,19 @@ ul {
   bottom: -50px;
 }
 .numberTemperature {
-  font-size: 12px;
-  text-align: center;
+  font-size: 14px;
 }
 .days {
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
 }
 .weather-temperature-min {
   opacity: 0.4;
+}
+.weather-forecast {
+  display: inline-flex;
+  text-align: center;
+  margin: 2px auto;
+  padding: 0;
+  width: 175px;
 }
