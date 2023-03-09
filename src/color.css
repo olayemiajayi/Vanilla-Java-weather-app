@@ -19,16 +19,16 @@ body {
 }
 .humidity {
   position: relative;
-  top: -100px;
-  left: 290px;
+  top: -85px;
+  left: 230px;
   list-style-type: none;
   font-weight: bold;
   font-size: 18px;
 }
 .wind {
   position: relative;
-  top: -100px;
-  left: 290px;
+  top: -85px;
+  left: 230px;
   list-style-type: none;
   font-weight: bold;
   font-size: 15px;
@@ -46,8 +46,9 @@ ul {
   padding: 0;
 }
 .weather-app {
-  max-width: 540px;
-  margin: 20px auto;
+  display: block;
+  max-width: 455px;
+  margin: 2px auto;
   padding: 20px;
   border: 5px solid #45171d;
   border-radius: 10px;
@@ -58,18 +59,21 @@ ul {
 }
 .numberTemperature {
   font-size: 14px;
+  text-align: center;
 }
-.days {
+.weather-date {
   text-align: center;
   font-size: 18px;
 }
 .weather-temperature-min {
   opacity: 0.4;
+  position: relative;
 }
 .weather-forecast {
   display: inline-flex;
   text-align: center;
   margin: 2px auto;
-  padding: 0;
-  width: 175px;
+  width: 480px;
+  position: relative;
+  left: 50px;
 }

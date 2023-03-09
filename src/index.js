@@ -19,6 +19,33 @@ console.log(date.getHours());
 city.innerHTML = `${day}, ${hour}:${minute}`;
 
 //search engine and current weather
+function displayForecast() {
+  let forecast = document.querySelector("#forecastWeather");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thur", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-3">
+    <div class="weather-date">${day}</div>
+    <img
+      src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-night.png"
+      alt=""
+      width="42"
+    />
+    <div class="numberTemperature">
+      <span class="weather-temperature-max"> 18°</span>
+      <span class="weather-temperature-min"> 12°</span>
+    </div>
+  </div>
+
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
 
 function displayWeather(response) {
   console.log(response);
@@ -60,3 +87,5 @@ function townShip(event) {
 
 let buttonSearch = document.querySelector("#form-weather");
 buttonSearch.addEventListener("submit", townShip);
+
+displayForecast();
