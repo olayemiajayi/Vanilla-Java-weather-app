@@ -19,7 +19,8 @@ console.log(date.getHours());
 city.innerHTML = `${day}, ${hour}:${minute}`;
 
 //search engine and current weather
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecast = document.querySelector("#forecastWeather");
   let forecastHTML = `<div class="row">`;
   let days = ["Thur", "Fri", "Sat", "Sun"];
@@ -46,6 +47,13 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
 }
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "308ee4b586fftbc5ce47ob29fd3f7a87";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=308ee4b586fftbc5ce47ob29fd3f7a87&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function displayWeather(response) {
   console.log(response);
@@ -69,6 +77,7 @@ function displayWeather(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  getForecast(response.data.coordinates);
 }
 
 function search(city) {
@@ -87,5 +96,3 @@ function townShip(event) {
 
 let buttonSearch = document.querySelector("#form-weather");
 buttonSearch.addEventListener("submit", townShip);
-
-displayForecast();
